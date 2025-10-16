@@ -12,6 +12,13 @@ import LinkedinWhiteBg from "@/assets/linkedinWhiteBg";
 import WhatsappWhiteBg from "@/assets/whatsappWhiteBg";
 
 export default function ContactsOverview() {
+  const SocialIcons = [
+    { key: "whatsapp", Icon: WhatsappWhiteBg },
+    { key: "telegram", Icon: TelegramWhiteBg },
+    { key: "facebook", Icon: FacebookWhiteBg },
+    { key: "vk", Icon: VkWhiteBg },
+    { key: "linkedin", Icon: LinkedinWhiteBg },
+  ];
   return (
     <section className="py-14 sm:py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -96,9 +103,9 @@ export default function ContactsOverview() {
             </div>
 
             <div className="mt-5 flex items-center gap-3">
-              {[<WhatsappWhiteBg />,<TelegramWhiteBg />,<FacebookWhiteBg />,<VkWhiteBg />,<LinkedinWhiteBg />].map((icon, i) => (
-                <Button key={i} aria-label="social" variant="ghost" size="md" className="h-10 w-10 rounded-md bg-white text-slate-800 grid place-items-center border border-slate-200 hover:bg-slate-50">
-                  <span aria-hidden>{icon}</span>
+              {SocialIcons.map(({ key, Icon }) => (
+                <Button key={key} aria-label="social" variant="ghost" size="md" className="h-10 w-10 rounded-md bg-white text-slate-800 grid place-items-center border border-slate-200 hover:bg-slate-50">
+                  <span aria-hidden><Icon /></span>
                 </Button>
               ))}
             </div>
@@ -108,3 +115,4 @@ export default function ContactsOverview() {
     </section>
   );
 }
+

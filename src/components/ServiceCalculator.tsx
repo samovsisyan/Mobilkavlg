@@ -1,15 +1,17 @@
 "use client";
 
 import Select from "react-select";
+import type { SingleValue } from "react-select";
 import { useMemo, useState } from "react";
 import Calculator from "@/assets/calculator";
 import YellowPhone from "@/assets/yellowPhone";
 import YellowNotebook from "@/assets/yellowNotebook";
 import YellowPS from "@/assets/yellowPS";
 import YellowTV from "@/assets/yellowTV"; 
-import Button from "@/components/ui/Button";
 import SuccessModal from "@/components/SuccessModal";
 import CallRequestModal from "@/components/CallRequestModal";
+
+type Option = { value: string; label: string };
 
 const categories = [
   { key: "phones", label: "Телефоны", icon: <YellowPhone /> },
@@ -18,7 +20,7 @@ const categories = [
   { key: "tv", label: "ТВ и Мониторы", icon: <YellowTV /> },
 ] as const;
 
-const optionsMap: Record<typeof categories[number]["key"], { value: string; label: string }[]> = {
+const optionsMap: Record<typeof categories[number]["key"], Option[]> = {
   phones: [
     { value: "screen", label: "Замена экрана" },
     { value: "battery", label: "Замена батареи" },
@@ -47,7 +49,7 @@ const optionsMap: Record<typeof categories[number]["key"], { value: string; labe
 
 export default function ServiceCalculator() {
   const [cat, setCat] = useState<typeof categories[number]["key"]>("phones");
-  const [problem, setProblem] = useState<{ value: string; label: string } | null>(null);
+  const [problem, setProblem] = useState<Option | null>(null);
   const [open, setOpen] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
 
@@ -102,12 +104,12 @@ export default function ServiceCalculator() {
           {/* Problem select */}
           <div className="mt-6">
             <label className="mb-2 block text-sm font-medium text-slate-900">В чем проблема?</label>
-            <Select
+            <Select<Option, false>
               instanceId="service-problem-select"
               placeholder="Выберите тип проблемы"
               options={options}
               value={problem}
-              onChange={(v) => setProblem(v as any)}
+              onChange={(v: SingleValue<Option>) => setProblem(v)}
               styles={{
                 control: (base, state) => ({
                   ...base,

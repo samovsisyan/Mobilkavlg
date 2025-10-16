@@ -4,15 +4,9 @@ import Ratings from "@/components/Ratings";
 import Services from "@/components/Services";
 import QuickDiagnosis from "@/components/QuickDiagnosis";
 import WorksGallery from "@/components/WorksGallery";
-import WorksShowcase from "@/components/WorksShowcase";
 import ReviewsPreview from "@/components/ReviewsPreview";
-import ReviewsWall from "@/components/ReviewsWall";
 import FAQ from "@/components/FAQ";
 import ContactsOverview from "@/components/ContactsOverview";
-import FullRepair from "@/components/FullRepair";
-import ServiceCalculator from "@/components/ServiceCalculator";
-import AboutStory from "@/components/AboutStory";
-import ExpertsCarousel from "@/components/ExpertsCarousel";
 import ModalsControls from "@/components/ModalsControls";
 
 export default function Home() {

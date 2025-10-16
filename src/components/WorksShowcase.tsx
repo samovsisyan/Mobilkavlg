@@ -12,7 +12,17 @@ import { useState } from "react";
 import Samsung from "@/assets/logos/samsung";
 import Xiaomi from "@/assets/logos/xiaomi";
 
-const logos = [<Apple />, <Samsung />, <Xiaomi />, <Huawei />, <Motorola />, <Google />, <Lenovo />, <HP />, <Acer />];
+const logos = [
+  { key: "apple", Comp: Apple },
+  { key: "samsung", Comp: Samsung },
+  { key: "xiaomi", Comp: Xiaomi },
+  { key: "huawei", Comp: Huawei },
+  { key: "motorola", Comp: Motorola },
+  { key: "google", Comp: Google },
+  { key: "lenovo", Comp: Lenovo },
+  { key: "hp", Comp: HP },
+  { key: "acer", Comp: Acer },
+];
 const baseImages = [
   {
     src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
@@ -52,9 +62,9 @@ export default function WorksShowcase() {
 
         {/* Logos row */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-slate-500">
-          {logos.map((l) => (
-            <span key={l} className="text-2xl sm:text-3xl font-semibold opacity-70">
-              {l}
+          {logos.map(({ key, Comp }) => (
+            <span key={key} className="text-2xl sm:text-3xl font-semibold opacity-70">
+              <Comp />
             </span>
           ))}
         </div>

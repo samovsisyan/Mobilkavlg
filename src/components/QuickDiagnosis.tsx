@@ -5,10 +5,8 @@ import Button from "@/components/ui/Button";
 import YellowPhone from "@/assets/yellowPhone";
 import YellowLocation from "@/assets/yellowLocation";
 import YellowTime from "@/assets/yellowTime";
-import Location from "@/assets/location";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import MiniTimer from "@/assets/miniTimer";
 
 const Schema = Yup.object({
   name: Yup.string().required("Введите имя"),

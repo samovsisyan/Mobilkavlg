@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import YellowPhone from "@/assets/yellowPhone";

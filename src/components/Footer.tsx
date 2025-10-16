@@ -1,4 +1,3 @@
-import Logo from "@/assets/logo";
 import OwlWeb from "@/assets/owlWeb";
 import Link from "next/link";
 import LogoFooter from "@/assets/logoFooter";

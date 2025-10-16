@@ -49,16 +49,14 @@ export default function Header() {
     if (typeof mql.addEventListener === "function") {
       mql.addEventListener("change", listener);
     } else {
-      // @ts-ignore - for older Safari
-      mql.addListener(listener);
+      (mql as MediaQueryList & { addListener: (l: (e: MediaQueryListEvent) => void) => void }).addListener(listener);
     }
 
     return () => {
       if (typeof mql.removeEventListener === "function") {
         mql.removeEventListener("change", listener);
       } else {
-        // @ts-ignore - for older Safari
-        mql.removeListener(listener);
+        (mql as MediaQueryList & { removeListener: (l: (e: MediaQueryListEvent) => void) => void }).removeListener(listener);
       }
     };
   }, []);

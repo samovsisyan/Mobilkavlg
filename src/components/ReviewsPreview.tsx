@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Yandex from "@/assets/yandex";
 import Avito from "@/assets/avito";
