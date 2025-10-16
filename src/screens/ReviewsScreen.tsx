@@ -1,11 +1,11 @@
-import AboutHero from "@/components/AboutHero";
+import ReviewsMain from "@/components/ReviewsMain";
 import ReviewsWall from "@/components/ReviewsWall";
 import QuickDiagnosis from "@/components/QuickDiagnosis";
 
 export default function ReviewsScreen() {
   return (
     <section>
-      <AboutHero />
+      <ReviewsMain />
       <ReviewsWall />
       <QuickDiagnosis />
     </section>

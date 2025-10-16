@@ -37,7 +37,11 @@ export default function ContactHero() {
   return (
     <section className="relative isolate overflow-hidden bg-slate-900">
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_500px_at_50%_-50%,rgba(59,130,246,0.35),transparent_70%)]"
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop')",
+        }}
         aria-hidden
       />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 md:py-20">
