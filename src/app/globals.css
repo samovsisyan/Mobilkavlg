@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif; */
 }
+
+@layer components {
+  .layout-center-wrap {
+    @apply flex flex-col flex-wrap justify-center w-full mx-auto gap-8 pt-9;
+  }
+}

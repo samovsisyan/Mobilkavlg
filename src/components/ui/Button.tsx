@@ -83,14 +83,33 @@ export default function Button(props: ButtonProps) {
 
   // Link mode
   if ("href" in props && props.href) {
-    // Exclude className from spread to avoid overriding our computed classes
-    const { href, prefetch, className: _className, ...anchorProps } =
-      props as ButtonAsLink;
+    // Only pass valid Link props and let the rest go to the anchor element
+    const { 
+      href, 
+      prefetch, 
+      className: _className, 
+      variant,
+      size,
+      rounded,
+      fullWidth,
+      leftIcon: _li,
+      rightIcon: _ri,
+      ...anchorProps 
+    } = props as ButtonAsLink;
+    
     return (
-      <Link href={href} prefetch={prefetch} className={classes} {...anchorProps}>
-        {leftIcon ? <span aria-hidden className="mr-2">{leftIcon}</span> : null}
-        <span>{children}</span>
-        {rightIcon ? <span aria-hidden className="ml-2">{rightIcon}</span> : null}
+      <Link 
+        href={href} 
+        prefetch={prefetch} 
+        className={classes} 
+        passHref
+        legacyBehavior
+      >
+        <a {...anchorProps} className={classes}>
+          {leftIcon ? <span aria-hidden className="mr-2">{leftIcon}</span> : null}
+          <span>{children}</span>
+          {rightIcon ? <span aria-hidden className="ml-2">{rightIcon}</span> : null}
+        </a>
       </Link>
     );
   }
