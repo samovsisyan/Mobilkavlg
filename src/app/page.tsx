@@ -8,6 +8,7 @@ import ReviewsPreview from "@/components/ReviewsPreview";
 import FAQ from "@/components/FAQ";
 import ContactsOverview from "@/components/ContactsOverview";
 import ModalsControls from "@/components/ModalsControls";
+import GlobalBanners from "@/components/GlobalBanners";
 
 export default function Home() {
   return (
@@ -43,6 +44,8 @@ export default function Home() {
       {/* <ErrorHero />
       <PrivacyPolicy /> */}
 
+      {/* Global UI Components */}
+      <GlobalBanners />
     </div>
   );
 }
