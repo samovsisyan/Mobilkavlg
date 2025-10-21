@@ -2,7 +2,6 @@
 
 import CookieIcon from '@/assets/cookieIcon';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import Button from './ui/Button';
 
 export default function CookieConsentBanner() {
@@ -34,7 +33,7 @@ export default function CookieConsentBanner() {
         
         <div className='flex flex-col gap-2 items-start text-black '>
             <p className='font-bold'>Мы используем файлы cookie</p> 
-            <p className='text-sm text-start'>Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов <Link href="/" className='underline'>(подробнее об политике конфиденциальности читайте тут)</Link></p>
+            <p className='text-sm text-start'>Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов <a href="tel:+79093843434" className='underline'>(подробнее об политике конфиденциальности читайте тут)</a></p>
         </div>
         <Button 
           href="/contacts" variant="primary"
