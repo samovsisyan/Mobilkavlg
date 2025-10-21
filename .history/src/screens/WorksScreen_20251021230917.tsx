@@ -8,9 +8,8 @@ export default function WorksScreen() {
     <section>
        <WorksHero />
        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <WorksShowcase />
-          <QuickDiagnosis />
-       </div>
+       <WorksShowcase />
+       <QuickDiagnosis />
     </section>
   );
 }

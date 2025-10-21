@@ -6,10 +6,8 @@ export default function ReviewsScreen() {
   return (
     <section>
       <ReviewsMain />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <ReviewsWall />
-        <QuickDiagnosis />
-      </div>
+      <ReviewsWall />
+      <QuickDiagnosis />
     </section>
   );
 }

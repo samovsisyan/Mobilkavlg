@@ -9,7 +9,6 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
       <Header />
       <main className="flex-1">
         {/* <div className="mx-auto max-w-6xl px-4 sm:px-6">{children}</div> */}
-        {children}
       </main>
       <Footer />
     </div>

@@ -7,8 +7,8 @@ export default function ReviewsScreen() {
     <section>
       <ReviewsMain />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <ReviewsWall />
-        <QuickDiagnosis />
+      <ReviewsWall />
+      <QuickDiagnosis />
       </div>
     </section>
   );

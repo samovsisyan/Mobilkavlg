@@ -9,10 +9,9 @@ export default function AboutScreen() {
     <section>
       <AboutHero />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <AboutStory />
-        <ExpertsCarousel /> 
-        <QuickDiagnosis />
-      </div>
+      <AboutStory />
+      <ExpertsCarousel /> 
+      <QuickDiagnosis />
     </section>
   );
 }

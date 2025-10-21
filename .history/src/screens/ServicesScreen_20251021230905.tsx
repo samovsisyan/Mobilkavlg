@@ -10,11 +10,10 @@ export default function ServicesScreen() {
     <section>
       <ServicesHero />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <FullRepair />
-        <Benefits />
-        <ServiceCalculator /> 
-        <QuickDiagnosis />
-      </div>
+      <FullRepair />
+      <Benefits />
+      <ServiceCalculator /> 
+      <QuickDiagnosis />
     </section>
   );
 }

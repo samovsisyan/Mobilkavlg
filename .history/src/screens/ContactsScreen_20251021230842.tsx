@@ -8,9 +8,9 @@ export default function ContactsScreen() {
     <section>
       <ContactHero />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <StayInTouch />
-        <QuickDiagnosis />
-        <ContactsOverview />
+      <StayInTouch />
+      <QuickDiagnosis />
+      <ContactsOverview />
       </div>
     </section>
   );
