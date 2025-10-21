@@ -92,7 +92,7 @@ export default function ServiceCalculator() {
                       : "border-slate-200 hover:bg-slate-50")
                   }
                 >
-                  <span className="grid h-10 w-10 place-items-center text-xl" aria-hidden>
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-yellow-400/90 text-xl" aria-hidden>
                     {c.icon}
                   </span>
                   <span className="font-medium text-slate-900">{c.label}</span>

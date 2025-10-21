@@ -44,7 +44,7 @@ export default function QuickDiagnosis() {
                 color: 'text-blue-600'
               }].map((b) => (
                 <li key={b.title} className="flex flex-col gap-3 items-center md:flex-row lg:flex-wrap md:items-center lg:items-center">
-                  <div className="h-10 w-10 mr-2 grid place-items-center text-xl" aria-hidden>
+                  <div className="h-10 w-10 mr-2 rounded-full grid place-items-center text-xl" aria-hidden>
                     {b.icon && <b.icon />}
                   </div>
                   <div>

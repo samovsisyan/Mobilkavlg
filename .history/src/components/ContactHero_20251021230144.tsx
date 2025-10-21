@@ -61,7 +61,7 @@ export default function ContactHero({ imageUrl = bg.src }: ContactHeroProps) {
               <div className="flex flex-col h-full justify-center align-center items-center">
                 <div className="flex items-center gap-3">
                   <div className="flex flex-col items-center justify-center gap-4 text-center">
-                    <div className="grid h-10 w-10 place-items-center text-xl" aria-hidden>
+                    <div className="grid h-10 w-10 place-items-center roubg-yellow-400/90nded-full  text-xl" aria-hidden>
                         <item.icon />
                     </div>
                     <div className="text-lg font-semibold text-center">{item.title}</div>

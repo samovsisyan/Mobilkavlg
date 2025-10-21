@@ -88,7 +88,7 @@ const data: RepairCard[] = [
 
 function BrandBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center px-2 py-1 text-xs font-semibold text-slate-900">
+    <span className="inline-flex items-center rounded-md bg-yellow-400/90 px-2 py-1 text-xs font-semibold text-slate-900">
       {label}
     </span>
   );
