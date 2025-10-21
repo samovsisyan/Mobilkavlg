@@ -26,7 +26,7 @@ export default function CookieConsentBanner() {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  // if (!isVisible) return null;
 
   return (
     <div className="fixed bottom-2 left-[2%] md:left-[20%]  md:right-10 right-2 bg-white text-white p-2 md:p-8 text-center z-50 border border-[#9CA3AF] rounded-lg">
@@ -36,13 +36,13 @@ export default function CookieConsentBanner() {
         </div>
         
         <div className='flex flex-col gap-2 items-start text-black '>
-            <p className='font-bold text-start pr-[32px]'>Мы используем файлы cookie</p> 
-            <p className='text-sm text-start font-sm'>Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов <Link href="/" className='underline'>(подробнее об политике конфиденциальности читайте тут)</Link></p>
+            <p className='font-bold text-start'>Мы используем файлы cookie</p> 
+            <p className='text-sm text-start'>Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов <Link href="/" className='underline'>(подробнее об политике конфиденциальности читайте тут)</Link></p>
         </div>
         {isLg && <Button 
           href="/contacts" variant="primary"
           onClick={handleAccept}
-          className="h-10 mt-[34px]"
+          className="h-10"
         >
           Принять
         </Button>}

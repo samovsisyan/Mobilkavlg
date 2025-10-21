@@ -26,7 +26,7 @@ export default function CookieConsentBanner() {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  // if (!isVisible) return null;
 
   return (
     <div className="fixed bottom-2 left-[2%] md:left-[20%]  md:right-10 right-2 bg-white text-white p-2 md:p-8 text-center z-50 border border-[#9CA3AF] rounded-lg">
@@ -42,7 +42,7 @@ export default function CookieConsentBanner() {
         {isLg && <Button 
           href="/contacts" variant="primary"
           onClick={handleAccept}
-          className="h-10 mt-[34px]"
+          className="h-10"
         >
           Принять
         </Button>}

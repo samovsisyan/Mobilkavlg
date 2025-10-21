@@ -29,9 +29,7 @@ export default function NoNetworkBanner() {
   return (
     <div className="fixed bottom-2 left-[2%] md:left-[20%]  md:right-10 right-2 bg-white text-white p-2 md:p-8 text-center z-50 border border-[#9CA3AF] rounded-lg">
       <div className="container mx-auto flex flex-row gap-4">
-        <div style={{width: '62px', height: '62px'}}>
-          <NetworkIcon width={62} height={62}/> 
-        </div>
+        <NetworkIcon /> 
         
         <div className='flex flex-col gap-2 items-start text-black '>
             <p className='font-bold text-start pr-[32px]'>Выключите VPN</p> 
@@ -46,7 +44,7 @@ export default function NoNetworkBanner() {
       </div>
       <button
             aria-label="Закрыть окно"
-            className="absolute top-2 right-2 bg-white text-black px-2  rounded hover:bg-gray-100 transition-colors"
+            className="absolute top-2 right-2 bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors"
             onClick={() => setIsOnline(true)}
           >
             ✕

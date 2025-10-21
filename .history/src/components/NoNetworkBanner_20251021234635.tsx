@@ -46,7 +46,7 @@ export default function NoNetworkBanner() {
       </div>
       <button
             aria-label="Закрыть окно"
-            className="absolute top-2 right-2 bg-white text-black px-2  rounded hover:bg-gray-100 transition-colors"
+            className="absolute top-2 right-2 text-black px-4 py-2 rounded hover:bg-gray-100 transition-colors"
             onClick={() => setIsOnline(true)}
           >
             ✕

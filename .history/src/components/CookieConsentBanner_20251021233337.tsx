@@ -2,12 +2,12 @@ import CookieIcon from '@/assets/cookieIcon';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Button from './ui/Button';
-import { useBreakpoints } from '@/helpers/funtions';
+import { useMediaQuery } from 'react-responsive';
 
 export default function CookieConsentBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
-  const {isLg} = useBreakpoints();
+  const isLg = useMediaQuery('lg');
 
   useEffect(() => {
     // Check if user has already given consent
@@ -26,23 +26,23 @@ export default function CookieConsentBanner() {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  // if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-2 left-[2%] md:left-[20%]  md:right-10 right-2 bg-white text-white p-2 md:p-8 text-center z-50 border border-[#9CA3AF] rounded-lg">
-      <div className=" flex flex-row gap-4 items-start">
+    <div className="fixed bottom-2 left-[2%] md:left-[20%]  right-10 bg-white text-white p-2 md:p-8 text-center z-50 border border-[#9CA3AF] rounded-lg">
+      <div className=" flex flex-row gap-4 items-end">
         <div style={{width: '86px', height: '86px'}}>
           <CookieIcon width={86} height={86}/> 
         </div>
         
         <div className='flex flex-col gap-2 items-start text-black '>
-            <p className='font-bold text-start pr-[32px]'>Мы используем файлы cookie</p> 
-            <p className='text-sm text-start font-sm'>Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов <Link href="/" className='underline'>(подробнее об политике конфиденциальности читайте тут)</Link></p>
+            <p className='font-bold'>Мы используем файлы cookie</p> 
+            <p className='text-sm text-start'>Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов <Link href="/" className='underline'>(подробнее об политике конфиденциальности читайте тут)</Link></p>
         </div>
         {isLg && <Button 
           href="/contacts" variant="primary"
           onClick={handleAccept}
-          className="h-10 mt-[34px]"
+          className="h-10"
         >
           Принять
         </Button>}
