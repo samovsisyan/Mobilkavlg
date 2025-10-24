@@ -8,7 +8,7 @@ import YellowPhone from "@/assets/yellowPhone";
 import YellowNotebook from "@/assets/yellowNotebook";
 import YellowPS from "@/assets/yellowPS";
 import YellowTV from "@/assets/yellowTV"; 
-import SuccessModal from "@/components/modals/SuccessModal";
+import SuccessModal from "@/components/SuccessModal";
 import CallRequestModal from "@/components/modals/CallRequestModal";
 
 type Option = { value: string; label: string };
