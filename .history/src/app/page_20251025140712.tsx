@@ -7,7 +7,7 @@ import WorksGallery from "@/components/WorksGallery";
 import ReviewsPreview from "@/components/ReviewsPreview";
 import FAQ from "@/components/FAQ";
 import ContactsOverview from "@/components/ContactsOverview";
-// import ModalsControls from "@/components/modals/ModalsControls";
+import ModalsControls from "@/components/modals/ModalsControls";
 import GlobalBanners from "@/components/GlobalBanners";
 
 export default function Home() {

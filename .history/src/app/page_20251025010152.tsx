@@ -7,7 +7,7 @@ import WorksGallery from "@/components/WorksGallery";
 import ReviewsPreview from "@/components/ReviewsPreview";
 import FAQ from "@/components/FAQ";
 import ContactsOverview from "@/components/ContactsOverview";
-// import ModalsControls from "@/components/modals/ModalsControls";
+import ModalsControls from "@/components/modals/ModalsControls";
 import GlobalBanners from "@/components/GlobalBanners";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
         <Ratings />
         <Services />
         {/* Modals demo section */}
-        {/* <section className="py-14 sm:py-16 md:py-20">
+        <section className="py-14 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">Модальные окна</h2>
@@ -29,7 +29,7 @@ export default function Home() {
               <ModalsControls />
             </div>
           </div>
-        </section> */}
+        </section>
         <QuickDiagnosis />
         <WorksGallery />
         {/* <WorksShowcase /> */}
