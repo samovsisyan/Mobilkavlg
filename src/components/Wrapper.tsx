@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/wrapper/Header";
+import Footer from "@/components/wrapper/Footer";
 import PreHeader from "@/components/PreHeader";
 
 export default function Wrapper({ children }: { children: React.ReactNode }) {

@@ -80,6 +80,7 @@ export default function Button(props: ButtonProps) {
     fullWidth ? "w-full" : undefined,
     className
   );
+
   // Link mode
   if ("href" in props && props.href) {
     // Only pass valid Link props and let the rest go to the anchor element
