@@ -6,10 +6,12 @@ import Button from "@/components/ui/Button";
 import Logo  from "@/assets/logo";
 import Location from "@/assets/location";
 import { useBreakpoints } from "@/helpers/funtions";
+import { useModal } from "@/context/ModalContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { isLg, isMd } = useBreakpoints();
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     if (open) {
@@ -69,10 +71,6 @@ export default function Header() {
     { href: "/contacts", label: "Контакты" },
   ];
 
-  function setContactOpen(arg0: boolean): void {
-    throw new Error("Function not implemented.");
-  }
-
   return (
     <div className="sticky top-0 md:top-0 md:pt-4 md:pb-4 z-50 w-full bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -91,7 +89,10 @@ export default function Header() {
             variant="primary"
             size="responsive"
             className="min-w-[180px]"
-            onClick={() => setContactOpen(true)}
+            onClick={(e) => {
+              e.preventDefault(); // Prevent navigation
+              openContactModal();
+            }}
           >
             {isLg ? "Связаться с нами" : "Связаться"}
           </Button>}

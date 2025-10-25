@@ -2,12 +2,15 @@
 import { useBreakpoints } from "@/helpers/funtions";
 import Button from "@/components/ui/Button";
 import bg from "@/assets/mainIllustration/homeMainIllustartion.png";
+import { useModal } from "@/context/ModalContext";
 type AboutHeroProps = {
   imageUrl?: string; // public/ path, e.g., "/assets/team.jpg"
 };
 export default function Hero({ imageUrl = bg.src }: AboutHeroProps) {
   const { isSm } = useBreakpoints();
   const year = new Date().getFullYear();
+  const { openContactModal, openCallRequestModal } = useModal();
+  
   return (
     <section className="relative isolate">
       {/* Background image */}
@@ -44,10 +47,16 @@ export default function Hero({ imageUrl = bg.src }: AboutHeroProps) {
 
         {/* CTAs */}
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="/contacts" variant="primary" size="lg" className="min-w-[220px]">
+          <Button variant="primary" size="lg" className="min-w-[220px]" onClick={(e) => {
+            e.preventDefault(); // Prevent navigation
+            openCallRequestModal();
+          }}>
             Заказать звонок
           </Button>
-          {isSm && <Button href="/contacts" variant="outline" size="lg" className="min-w-[220px]">
+          {isSm && <Button variant="outline" size="lg" className="min-w-[220px]" onClick={(e) => {
+            e.preventDefault(); // Prevent navigation
+            openContactModal();
+          }}>
             Связаться с нами
           </Button>}
         </div>

@@ -7,6 +7,7 @@ import YellowLocation from "@/assets/yellowLocation";
 import YellowTime from "@/assets/yellowTime";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useModal } from "@/context/ModalContext";
 
 const Schema = Yup.object({
   name: Yup.string().required("Введите имя"),
@@ -15,6 +16,8 @@ const Schema = Yup.object({
 });
 
 export default function QuickDiagnosis() {
+  const { showSuccessModal } = useModal();
+
   return (
     <section className="bg-slate-100 py-14 sm:py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -64,12 +67,19 @@ export default function QuickDiagnosis() {
               initialValues={{ name: "", phone: "", consent: true }}
               validationSchema={Schema}
               onSubmit={async (values, { setSubmitting, resetForm }) => {
-                // You can integrate with API here
-                console.log("Lead:", values);
-                await new Promise((r) => setTimeout(r, 800));
-                resetForm();
-                setSubmitting(false);
-                alert("Спасибо! Мы скоро свяжемся с вами.");
+                try {
+                  console.log("Lead:", values);
+                  await new Promise((r) => setTimeout(r, 800));
+                  resetForm();
+                  showSuccessModal(
+                    'Спасибо за заявку!',
+                    'Наш специалист свяжется с вами в ближайшее время.'
+                  );
+                } catch (error) {
+                  console.error('Error submitting form:', error);
+                } finally {
+                  setSubmitting(false);
+                }
               }}
             >
               {({ isSubmitting, isValid, touched }) => (

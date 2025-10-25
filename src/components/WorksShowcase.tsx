@@ -72,11 +72,11 @@ export default function WorksShowcase() {
         {/* Gallery */}
         <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* First row - two items */}
-          {visible.slice(0, 2).map((img) => (
-            <div key={img.src + "a"} className="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-xl bg-slate-200">
-              <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
-            </div>
-          ))}
+          {visible.slice(0, 2).map((img, index) => (
+              <div key={`${img.src}-${index}`} className="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-xl bg-slate-200">
+                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+              </div>
+            ))}
 
           {/* Second row - one wide item */}
           <div className="sm:col-span-2 relative h-48 sm:h-64 md:h-72 overflow-hidden rounded-xl bg-slate-200">
@@ -84,11 +84,11 @@ export default function WorksShowcase() {
           </div>
 
           {/* Third row - two items */}
-          {visible.slice(3, 5).map((img) => (
-            <div key={img.src + "b"} className="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-xl bg-slate-200">
-              <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
-            </div>
-          ))}
+          {visible.slice(3, 5).map((img, index) => (
+              <div key={`${img.src}-${index + 3}`} className="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-xl bg-slate-200">
+                <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+              </div>
+            ))}
 
           {/* Before/After collage */}
           <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">

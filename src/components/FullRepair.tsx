@@ -1,10 +1,12 @@
-import Link from "next/link";
+"use client";
+
 import Button from "@/components/ui/Button";
 import Check from "@/assets/check";
 import Radio from "@/assets/radio";
 import Telephone from "@/assets/telephone";
 import Notebook from "@/assets/notebook";
 import Display from "@/assets/display";
+import { useModal } from "@/context/ModalContext";
 
 type RepairCard = {
   icon: React.ReactNode;
@@ -95,6 +97,8 @@ function BrandBadge({ label }: { label: string }) {
 }
 
 export default function FullRepair() {
+  const { openCallRequestModal } = useModal();
+
   return (
     <section className="py-14 sm:py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -133,7 +137,12 @@ export default function FullRepair() {
                 <div className="text-blue-700 font-bold text-2xl flex justify-end">{card.priceFrom}</div>
 
               <div className="mt-5 flex items-center justify-between">
-                <Button href="/contacts" variant="primary" size="md" className="px-4 py-3 text-sm  w-full">
+                <Button variant="primary" size="md" className="px-4 py-3 text-sm  w-full"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent navigation
+                    openCallRequestModal();
+                  }}
+                >
                   Заказать ремонт
                 </Button>
               </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import bg from "@/assets/mainIllustration/re.png";
+import bg from "@/assets/mainIllustration/reviewsMainIllustration.png";
 import { useBreakpoints } from "@/helpers/funtions";
 import AvitoOnlyLogo from "@/assets/logos/avitoOnlyLogo";
 import YandexOnlyLogo from "@/assets/logos/yandexOnlyLogo";

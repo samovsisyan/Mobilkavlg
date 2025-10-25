@@ -80,6 +80,7 @@ export default function Button(props: ButtonProps) {
     fullWidth ? "w-full" : undefined,
     className
   );
+  console.log('classes', props.href);
 
   // Link mode
   if ("href" in props && props.href) {
@@ -101,15 +102,12 @@ export default function Button(props: ButtonProps) {
       <Link 
         href={href} 
         prefetch={prefetch} 
-        className={classes} 
-        passHref
-        legacyBehavior
+        className={classes}
+        {...anchorProps}
       >
-        <a {...anchorProps} className={classes}>
-          {leftIcon ? <span aria-hidden className="mr-2">{leftIcon}</span> : null}
-          <span>{children}</span>
-          {rightIcon ? <span aria-hidden className="ml-2">{rightIcon}</span> : null}
-        </a>
+        {leftIcon ? <span aria-hidden className="mr-2">{leftIcon}</span> : null}
+        <span>{children}</span>
+        {rightIcon ? <span aria-hidden className="ml-2">{rightIcon}</span> : null}
       </Link>
     );
   }
