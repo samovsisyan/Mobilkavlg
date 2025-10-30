@@ -19,6 +19,12 @@ type ModalContextType = {
   successModalMessage: string;
   showSuccessModal: (title?: string, message?: string) => void;
   closeSuccessModal: () => void;
+
+  // Services Modal
+  isServicesOpen: boolean;
+  currentServiceSlug: string;
+  openServicesModal: (slug?: string) => void;
+  closeServicesModal: () => void;
 };
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
@@ -50,6 +56,17 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   
   const closeSuccessModal = () => setIsSuccessOpen(false);
 
+  // Services Modal State
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [currentServiceSlug, setCurrentServiceSlug] = useState('phones');
+
+  // Services Modal Handlers
+  const openServicesModal = (slug = 'phones') => {
+    setCurrentServiceSlug(slug);
+    setIsServicesOpen(true);
+  };
+  const closeServicesModal = () => setIsServicesOpen(false);
+
   return (
     <ModalContext.Provider value={{
       // Contact Modal
@@ -67,7 +84,12 @@ export function ModalProvider({ children }: { children: ReactNode }) {
       successModalTitle,
       successModalMessage,
       showSuccessModal,
-      closeSuccessModal
+      closeSuccessModal,
+      // Services Modal
+      isServicesOpen,
+      currentServiceSlug,
+      openServicesModal,
+      closeServicesModal
     }}>
       {children}
     </ModalContext.Provider>
