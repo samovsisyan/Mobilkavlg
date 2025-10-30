@@ -75,7 +75,7 @@ type ServiceSlug = keyof typeof services;
 // You can move this to layout.tsx or page.tsx in the parent directory
 
 export default function ServicePage({ params }: { params: { slug: string } | Promise<{ slug: string }> }) {
-  const { openCallRequestModal } = useModal();
+  const { openCallRequestModal, openServicesModal } = useModal();
   const [service, setService] = useState<typeof services[keyof typeof services] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [slug, setSlug] = useState('');
@@ -112,8 +112,6 @@ export default function ServicePage({ params }: { params: { slug: string } | Pro
       </div>
     );
   }
-
-  const { openServicesModal } = useModal();
 
   return (
     <div className='mx-auto max-w-6xl px-4 sm:px-6'>

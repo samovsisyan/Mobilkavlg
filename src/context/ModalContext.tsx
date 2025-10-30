@@ -10,7 +10,8 @@ type ModalContextType = {
   
   // Call Request Modal
   isCallRequestOpen: boolean;
-  openCallRequestModal: () => void;
+  callRequestServiceTitle: string;
+  openCallRequestModal: (serviceTitle?: string) => void;
   closeCallRequestModal: () => void;
   
   // Success Modal
@@ -34,6 +35,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   const [isContactOpen, setIsContactOpen] = useState(false);
   // Call Request Modal State
   const [isCallRequestOpen, setIsCallRequestOpen] = useState(false);
+  const [callRequestServiceTitle, setCallRequestServiceTitle] = useState('');
   // Success Modal State
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [successModalTitle, setSuccessModalTitle] = useState('Успешно!');
@@ -44,8 +46,14 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   const closeContactModal = () => setIsContactOpen(false);
   
   // Call Request Modal Handlers
-  const openCallRequestModal = () => setIsCallRequestOpen(true);
-  const closeCallRequestModal = () => setIsCallRequestOpen(false);
+  const openCallRequestModal = (serviceTitle = '') => {
+    setCallRequestServiceTitle(serviceTitle);
+    setIsCallRequestOpen(true);
+  };
+  const closeCallRequestModal = () => {
+    setIsCallRequestOpen(false);
+    setCallRequestServiceTitle('');
+  };
   
   // Success Modal Handlers
   const showSuccessModal = (title = 'Успешно!', message = 'Ваш запрос успешно отправлен!') => {
@@ -76,6 +84,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
       
       // Call Request Modal
       isCallRequestOpen,
+      callRequestServiceTitle,
       openCallRequestModal,
       closeCallRequestModal,
       
